@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Builds</title>
+    <link rel="stylesheet" href="./css/builds.css">
+    <link rel="shortcut icon" href="./Assets/img/pngwing.com.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <main>
+        <nav class="navbar">
+            <ul class="lista_navbar">
+                <li>
+                    <a href="./builds.html#analise">
+                        Builds
+                    </a>
+                </li>
+                <li>
+                    <a href="#boss_lista">
+                        Chefes
+                    </a>
+                </li>
+                <li class="home_button">
+                    <a href="./index.html#Home">
+                        <img src="./Assets/img/maldicao.png">
+                        Souls Builds
+                    </a>
+                </li>
+                <li>
+                    <a href="./index.html#quem_somos">
+                        Sobre
+                    </a>
+                </li>
+                <li>
+                    <a href="./index.html#Footer">
+                        Contato
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <section class="section_1">
+
+            <!-- ANALYTICS -->
+            <div class="analytics" id="analise">
+
+                <div class="status">
+                    <p>Tipos de Dano:</p>
+                    <div class="status_damage">
+                        <ul>
+                            <li>
+                                <img src="./Assets/img/enchantments/blessed_gem-icon.png">
+                                <a onclick="item_por_encantamento('Blessed')">Blessed </a>
+                            </li>
+                            <li>
+                                <img src="./Assets/img/enchantments/blood_gem-icon.png">
+                                <a onclick="item_por_encantamento('Blood')">Blood </a>
+                            </li>
+                            <li>
+                                <img src="./Assets/img/enchantments/chaos_gem-icon.png">
+                                <a onclick="item_por_encantamento('Chaos')">Chaos </a>
+                            </li>
+                            <li>
+                                <img src="./Assets/img/enchantments/crystal_gem-icon.png">
+                                <a onclick="item_por_encantamento('Crystal')">Crystal </a>
+                            </li>
+                            <li>
+                                <img src="./Assets/img/enchantments/dark_gem-icon.png">
+                                <a id="id_escuridao" onclick="item_por_encantamento('Dark')">Dark </a>
+                            </li>
+                            <li>
+                                <img src="./Assets/img/enchantments/deep_gem-icon.png">
+                                <a onclick="item_por_encantamento('Deep')">Deep </a>
+                            </li>
+                            <li>
+                                <img src="./Assets/img/enchantments/fire_gem-icon.png">
+                                <a id="id_fogo" onclick="item_por_encantamento('Fire')">Fire </a>
+                            </li>
+                            <li>
+                                <img src="./Assets/img/enchantments/heavy_gem-icon.png">
+                                <a onclick="item_por_encantamento('Heavy')">Heavy </a>
+                            </li>
+                            <li>
+                                <img src="./Assets/img/enchantments/hollow_gem-icon.png">
+                                <a onclick="item_por_encantamento('Hollow')">Hollow </a>
+                            </li>
+                            <li>
+                                <img src="./Assets/img/enchantments/lightning_gem-icon.png">
+                                <a id="id_raio" onclick="item_por_encantamento('Lightning')">Lightning </a>
+                            </li>
+                            <li>
+                                <img src="./Assets/img/enchantments/poison_gem-icon.png">
+                                <a onclick="item_por_encantamento('Poison')">Poison </a>
+                            </li>
+                            <li>
+                                <img src="./Assets/img/enchantments/raw_gem-icon.png">
+                                <a onclick="item_por_encantamento('Raw')">Raw </a>
+                            </li>
+                            <li>
+                                <img src="./Assets/img/enchantments/refined_gem-icon.png">
+                                <a onclick="item_por_encantamento('Refined')">Refined </a>
+                            </li>
+                            <li>
+                                <img src="./Assets/img/enchantments/sharp_gem-icon.png">
+                                <a onclick="item_por_encantamento('Sharp')">Sharp </a>
+                            </li>
+                            <li>
+                                <img src="./Assets/img/enchantments/simple_gem-icon.png">
+                                <a id="id_magia" onclick="item_por_encantamento('Simple')">Simple </a>
+                            </li>
+                            <li>
+                                <img src="./Assets/img/stats/standard.png">
+                                <a id="id_standard" onclick="item_por_encantamento('not_infusable')">Normal </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <p>Tipos de Escala:</p>
+                    <div class="status_scaling">
+                        <ul>
+                            <li>
+                                <img src="./Assets/img/stats/Strength_Icon.webp">
+                                <a onclick="item_por_atributo('Str')"> - Força</a>
+                            </li>
+                            <li>
+                                <img src="./Assets/img/stats/Dexterity_Icon.webp">
+                                <a onclick="item_por_atributo('Dex')"> - Destreza</a>
+                            </li>
+                            <li>
+                                <img src="./Assets/img/stats/Intelligence_Icon.webp">
+                                <a onclick="item_por_atributo('Int')"> - Inteligência</a>
+                            </li>
+                            <li>
+                                <img src="./Assets/img/stats/Faith_Icon.webp">
+                                <a onclick="item_por_atributo('Fth')"> - Fé</a>
+                            </li>
+                            <li>
+                                <img src="./Assets/img/stats/Luck_Icon.webp">
+                                <a onclick="item_por_atributo('Lck')"> - Sorte</a>
+                            </li>
+                        </ul>
+                    </div>
+                 </div>
+
+                <div class="itens">
+                    <h1>Lista de itens:</h1>
+
+                    <input onkeydown="item_por_nome()" id="input_item_buscar">
+
+                    <div class="itens_list" id="div_itens">
+                    </div>
+
+                    <h1>Tipos de Armas:</h1>
+                    <select class="status_weapon_type" onchange="item_por_tipo(this.value)">
+                        <option value=""></option>
+                        <option value="Axe">Axe</option>
+                        <option value="Axe (Paired)">Axe (Paired)</option>
+                        <option value="Greataxe">Greataxe</option>
+                        <option value="Bow">Bow</option>
+                        <option value="Claw">Claw</option>
+                        <option value="Crossbow">Crossbow</option>
+                        <option value="Curved Greatsword">Curved Greatsword</option>
+                        <option value="Curved Sword">Curved Sword</option>
+                        <option value="Curved Sword (Paired)">Curved Sword (Paired)</option>
+                        <option value="Thrusting Sword">Thrusting Sword</option>
+                        <option value="Sword (Paired)">Sword (Paired)</option>
+                        <option value="Straight Sword">Straight Sword</option>
+                        <option value="Greatsword">Greatsword</option>
+                        <option value="Ultra Greatsword">Ultra Greatsword</option>
+                        <option value="Ultra Greatsword (unique)">Ultra Greatsword (unique)</option>
+                        <option value="Dagger">Dagger</option>
+                        <option value="Dagger(Paired)">Dagger(Paired)</option>
+                        <option value="Fist">Fist</option>
+                        <option value="Pyromancy Flame">Pyromancy Flame</option>
+                        <option value="Hammer">Hammer</option>
+                        <option value="Hammer(Paired)">Hammer(Paired)</option>
+                        <option value="Great Hammer">Great Hammer</option>
+                        <option value="Shield">Shield</option>
+                        <option value="Small Shield">Small Shield</option>
+                        <option value="Greatshield">Greatshield</option>
+                        <option value="Halberd">Halberd</option>
+                        <option value="Spear">Spear</option>
+                        <option value="Spear (Paired)">Spear (Paired)</option>
+                        <option value="Katana">Katana</option>
+                        <option value="Katana(Paired)">Katana(Paired)</option>
+                        <option value="Pike">Pike</option>
+                        <option value="Reaper">Reaper</option>
+                        <option value="Sacred Chime">Sacred Chime</option>
+                        <option value="Talisman">Talisman</option>
+                        <option value="Staff">Staff</option>
+                        <option value="Whip">Whip</option>
+                        <option value="Torch">Torch</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- BOSS -->
+            <div class="boss" id="boss_lista">
+
+                <div class="titulo_chefe">
+                    <h3>Todos os Chefes:</h3>
+                    <input onkeydown="boss_pesquisar()" id="input_boss_buscar">
+                </div>
+
+                <div class="wruapper">
+                    <div class="boss_list" id="div_all_bosses">
+                        <!-- Filtrar o nome do chefe e trazer as informações dele direto do banco de dados -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- BUILDS -->
+            <div class="build">
+
+                <div class="stats">
+                    <div>
+                        <!-- STRENGTH  -->
+                        <figure>
+                            <img src="./Assets/img/stats/Strength_Icon.webp">
+                            <input onkeyup="atualizar_grafico_perks()" id="atributo_Strength">
+                        </figure>
+                        <!-- DEXTERITY  -->
+                        <figure>
+                            <img src="./Assets/img/stats/Dexterity_Icon.webp">
+                            <input onkeyup="atualizar_grafico_perks()" id="atributo_Dexterity">
+                        </figure>
+                        <!-- INTELLIGENCE  -->
+                        <figure>
+                            <img src="./Assets/img/stats/Intelligence_Icon.webp">
+                            <input onkeyup="atualizar_grafico_perks()" id="atributo_Intelligence">
+                        </figure>
+                        <!-- FAITH  -->
+                        <figure>
+                            <img src="./Assets/img/stats/Faith_Icon.webp">
+                            <input onkeyup="atualizar_grafico_perks()" id="atributo_Faith">
+                        </figure>
+                        <!-- LUCK  -->
+                        <figure>
+                            <img src="./Assets/img/stats/Luck_Icon.webp">
+                            <input onkeyup="atualizar_grafico_perks()" id="atributo_Luck">
+                        </figure>
+                    </div>
+
+                    <!-- GRÁFICO DE JOGADOR DE FUTEBOL PARA A CLASSE  -->
+                    <div class="graficos">
+                        <div class="build_grafico">
+                            <h2>Distribuição dos pontos:</h2>
+                            <canvas id="perks"></canvas>
+                        </div>
+                        
+                        <div class="build_grafico">
+                            <h2>Dano Recomendado:</h2>
+                            <canvas id="encantamento"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats_2">
+
+                    <div class="nome_button">
+                            <h3>Buscar Builds:</h3>
+                            <select class="buscar_builds_select" id="lista_builds" onchange="selecionar_build(this.value)">
+                                <!-- Lista de dados vinda do banco -->
+                            </select>
+                        </div>
+
+                        <div class="nome_button">
+                            <h3>Cadastrar Build:</h3>
+                            <input id="input_nome_build" placeholder="Nome">
+                            <button onclick="build_inserir()">Cadastrar</button>
+                        </div>
+                </div>
+                
+                <div class="item_escolhido">
+
+                    <h1>Item da build:</h1>
+                    
+                    <div class="item_escolhido_div" id="item_escolhido">
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        
+        <!-- MODAL  -->
+        <div class="modal" id="modal_background">
+            <div class="modal_login_cadastro" id="modal">
+                <!-- MODAL LOGIN -->
+                <div class="login" id="login">
+                    <p id="titulo">Login</p>
+                    <div class="email">
+                        <p>Email:</p>
+                        <input id="input_login_email">
+                    </div>
+                    <div class="senha">
+                        <p>Senha:</p>
+                        <input type="password" id="input_login_password">
+                    </div>
+                    <div class="botao_modal">
+                        <button onclick="login()">Login</button>
+                    </div>
+                    <a id="modal_changer" onclick="modal_to_cadastro()">
+                        <p>Ainda não possuo cadastro</p>
+                    </a>
+                </div>
+                <!-- MODAL CADASTRO -->
+                <div class="cadastro">
+                    <p id="titulo">Cadastro</p>
+                    <div class="email">
+                        <p>Nome:</p>
+                        <input id="input_cadastro_name">
+                    </div>
+                    <div class="email">
+                        <p>Email:</p>
+                        <input id="input_cadastro_email">
+                    </div>
+                    <div class="email">
+                        <p>Senha:</p>
+                        <input type="password" id="input_cadastro_password">
+                    </div>
+                    <div class="botao_modal">
+                        <button onclick="cadastrar()">Cadastrar</button>
+                    </div>
+                    <a id="modal_changer" onclick="modal_to_login()">
+                        <p>Quero fazer o login</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <script src="js/builds_javascript.js"></script>
+    <script src="js/builds_grafico.js"></script>
+    <script src="js/build_log_cad.js"></script>
+</body>
+
+</html>
